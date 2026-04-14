@@ -1,0 +1,29 @@
+{
+  "name": "designz-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Express.js REST API for Designz portfolio — deployed on Vercel",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "express": "^4.x",
+    "mongoose": "^8.x",
+    "bcryptjs": "^2.x",
+    "jsonwebtoken": "^9.x",
+    "cookie-parser": "^1.x",
+    "cors": "^2.x",
+    "dotenv": "^16.x",
+    "zod": "^3.x",
+    "cloudinary": "^2.x",
+    "express-rate-limit": "^7.x",
+    "helmet": "^7.x",
+    "morgan": "^1.x"
+  },
+  "devDependencies": {
+    "nodemon": "^3.x"
+  }
+}
