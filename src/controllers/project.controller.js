@@ -82,9 +82,14 @@ export const adminGetAllProjects = asyncHandler(async (req, res) => {
   const totalPages = Math.ceil(total / limit);
 
   const projects = await Project.find()
-    .sort({ createdAt: -1 })
+    .sort({ order: 1, createdAt: -1 })
     .skip((page - 1) * limit)
     .limit(limit);
+
+  projects.forEach((p) => {
+    p.gallery?.sort((a, b) => a.order - b.order);
+    p.videos?.sort((a, b) => a.order - b.order);
+  });
 
   return apiResponse(res, 200, true, 'Admin projects fetched', projects, {
     pagination: { page, limit, total, totalPages },
