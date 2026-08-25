@@ -19,6 +19,10 @@ export const projectCreateSchema = z.object({
   }).optional(),
   gallery: z.array(mediaSchema).optional(),
   videos: z.array(mediaSchema).optional(),
+  videoThumbnail: z.object({
+    url: z.string(),
+    publicId: z.string(),
+  }).optional().nullable(),
   tags: z.array(z.string()).optional(),
   isFeatured: z.boolean().optional(),
   order: z.number().optional(),

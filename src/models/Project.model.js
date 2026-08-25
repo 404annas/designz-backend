@@ -26,6 +26,10 @@ const projectSchema = new mongoose.Schema(
         order: { type: Number, default: 0 },
       },
     ],
+    videoThumbnail: {
+      url: String,
+      publicId: String,
+    },
     tags: [String],
     isFeatured: { type: Boolean, default: false },
     order: { type: Number, default: 0 },
